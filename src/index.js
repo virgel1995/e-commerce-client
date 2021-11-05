@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 // import "hover.css/css/hover-min.css"
+// import "jquery/dist/jquery";
 import "jquery/dist/jquery.slim";
 import "@fortawesome/fontawesome-free/css/all.css";
 

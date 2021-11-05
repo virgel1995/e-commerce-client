@@ -22,8 +22,8 @@ export function HomePage({ history }) {
       })
       .then(({ data }) => {
         // products data
-        setProducts(data.data);
-        console.log("productss", products);
+        setProducts(data);
+        // console.log("productss", products);
         setLoading(false);
       })
       .catch((e) => {
@@ -38,7 +38,7 @@ export function HomePage({ history }) {
     // with data
     return (
       <div className="bg-custom">
-        <Navbar user={user}/>
+        <Navbar user="user"/>
         <HomeMenu allProducts={products} />
         <HomeFooter />
       </div>

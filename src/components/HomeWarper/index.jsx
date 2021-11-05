@@ -3,8 +3,10 @@
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import Logo from "../../assets/images/logo192.png";
+import SimpleImageSlider from "react-simple-image-slider";
 
 export function HomeMenu({ allProducts }) {
+  console.log(allProducts.links);
   const starts = {
     size: 30,
     count: 5,
@@ -19,134 +21,94 @@ export function HomeMenu({ allProducts }) {
       console.log(`Example 2: new value is ${newValue}`);
     },
   };
+
+  let images = [];
+  for (let i = 0; i <= allProducts.data.length; i++) {
+    images.push({ url: `http://lorempixel.com/5${[i]}/500/cats/Faker` });
+  }
   return (
     <div>
       {/* ---------------- carrousel Start ------------------- */}
-      <div class="container">
-        <div id="demo" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="carousel-card">
-                <div class="row">
-                  <div class="col-md-6 text-center align-self-center">
-                    {" "}
-                    <img class="img-fluid" src="https://i.imgur.com/7a9V4yw.png" className="carousel-img" />
-                  </div>
-                  <div class="col-md-6 info">
-                    <div class="row title">
-                      <div class="col">
-                        <h2>Herbalism</h2>
-                      </div>
-                      <div class="col text-right">
-                        <a href="#">
-                          <i class="fa fa-heart-o"></i>
-                        </a>
-                      </div>
-                    </div>
+      <div className="container mt-5 ">
+        <div className="d-none d-md-block d-lg-block">
+          <SimpleImageSlider autoPlay={true} autoPlayDelay={true} showNavs={true} useGPURender={true} loop={true} width={1000} height={504} images={images} style={{ margin: "0 auto", marginTop: "20px", width: "1000px", borderRadius: "10px" }} />
+        </div>
 
-                    <p>Natural herbal wash</p>
-                    <ReactStars {...starts} value={0} />
-                    <span id="reviews">1590 Reviews</span>
-
-                    <div class="row price">
-                      <label class="radio">
-                        <input type="radio" name="size1" value="small" checked />
-                        <span>
-                          <div class="row">
-                            <big>
-                              <b>1.5 oz.</b>
-                            </big>
-                          </div>
-                          <div class="row">$12.95</div>
-                        </span>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" name="size1" value="large" />
-                        <span>
-                          <div class="row">
-                            <big>
-                              <b>4.4 oz.</b>
-                            </big>
-                          </div>
-                          <div class="row">$21.95</div>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row lower">
-                  <div class="col">
-                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                      <i class="fa fa-arrow-left"></i>
-                    </a>
-                    <a class="carousel-control-next" href="#demo" data-slide="next">
-                      <i class="fa fa-arrow-right"></i>
-                    </a>
-                  </div>
-
-                  <div class="col text-right align-self-center">
-                    <button class="btn">Add to cart</button>{" "}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="d-block d-md-none d-lg-none">
+          <SimpleImageSlider autoPlay={true} autoPlayDelay={true} showNavs={true}  useGPURender={true} loop={true} width={504} height={504} images={images} style={{ margin: "0 auto", marginTop: "20px", width: "504px", borderRadius: "10px" }} />
         </div>
       </div>
       {/* ---------------- carrousel End --------------------- */}
       {/* ---------------- givaways start -------------------- */}
-      <div class="container mt-5">
-        <div class="d-flex bg-custom justify-content-between align-items-center mb-3">
-          <span>Hottest Giveaways</span> <span class="custom-badge text-uppercase">See More</span>
+      <div className="container mt-5">
+        <div className="d-flex bg-custom justify-content-between align-items-center mb-3">
+          <span>Hottest Giveaways</span> <span className="custom-badge text-uppercase">See More</span>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex flex-row align-items-center time">
-                  <i class="fa fa-clock-o"></i> <small class="ml-1">3 Days</small>
+        <div className="row">
+          <div className="col-md-4">
+            <div className="card bg-transparent border">
+              <div className="d-flex bg-transparent justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center time">
+                  <i className="fa fa-clock-o"></i> <small className="ml-1">3 Days</small>
                 </div>
                 <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
               </div>
-              <div class="text-center">
-                <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" />
+
+              <div className="text-center bg-transparent">
+                <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" className="rounded-3" />
               </div>
-              <div class="text-center">
-                <h5>Amazon Echo</h5> <span class="text-success">$200 value</span>
+
+              <div className="text-center bg-transparent">
+                <h5>Amazon Echo</h5> <span className="text-success">$200 value</span>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex flex-row align-items-center time">
-                  <i class="fa fa-clock-o"></i> <small class="ml-1 text-primary">00:02:13</small>
+          <div className="col-md-4">
+            <div className="card bg-transparent border">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center time">
+                  <i className="fa fa-clock-o"></i> <small className="ml-1">3 Days</small>
                 </div>
                 <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
               </div>
-              <div class="text-center">
+              <div className="text-center">
+                <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" />
+              </div>
+              <div className="text-center">
+                <h5>Amazon Echo</h5> <span className="text-success">$200 value</span>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 ">
+            <div className="card bg-transparent border">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center time">
+                  <i className="fa fa-clock-o"></i> <small className="ml-1 text-primary">00:02:13</small>
+                </div>
+                <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
+              </div>
+              <div className="text-center">
                 <img src="https://i.imgur.com/bUWshC0.jpg" width="250" />
               </div>
-              <div class="text-center">
-                <h5>Kruve Coffee Filters</h5> <span class="text-success">$80 value</span>
+              <div className="text-center">
+                <h5>Kruve Coffee Filters</h5> <span className="text-success">$80 value</span>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <div class="card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex flex-row align-items-center time">
-                  <i class="fa fa-clock-o"></i> <small class="ml-1">2 Days</small>
+          <div className="col-md-4 ">
+            <div className="card bg-transparent border">
+              <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center time">
+                  <i className="fa fa-clock-o"></i> <small className="ml-1">2 Days</small>
                 </div>
                 <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
               </div>
-              <div class="text-center">
+              <div className="text-center">
                 <img src="https://i.imgur.com/aTqSahW.jpg" width="250" />
               </div>
-              <div class="text-center">
-                <h5>Apple watch 2.0</h5> <span class="text-success">$360 value</span>
+              <div className="text-center">
+                <h5>Apple watch 2.0</h5> <span className="text-success">$360 value</span>
               </div>
             </div>
           </div>
@@ -157,14 +119,14 @@ export function HomeMenu({ allProducts }) {
       {/*-------------------  Mobile Section Start ---------------  */}
       <div className="py-3 bg-custom text-center mt-5 w-25 mx-auto">
         <p className=" d-inline"> Mobile Phones</p>
-        <img src="https://i.imgur.com/hpftqCo.png" className="section-header-img"/>
+        <img src="https://i.imgur.com/hpftqCo.png" className="section-header-img" />
       </div>
-      <div class="container mt-1 d-flex justify-content-center mt-100">
-        <div class="row">
-          {allProducts.map((product) => (
-            <div key={product.id} class="col-md-3 col-sm-6">
-              <div class="product-wrapper mb-45 text-center">
-                <div class="product-img">
+      <div className="container mt-1 d-flex justify-content-center mt-100">
+        <div className="row">
+          {allProducts.data.map((product) => (
+            <div key={product.id} className="col-md-3 col-sm-6">
+              <div className="product-wrapper mb-45 text-center">
+                <div className="product-img">
                   <p className="product-discount">
                     {" "}
                     <del>{product.price} $</del>{" "}
@@ -175,16 +137,16 @@ export function HomeMenu({ allProducts }) {
                     <img src="https://i.imgur.com/tL7ZE46.jpg" alt={product.name} className="rounded-6px" />
                   </a>
 
-                  <div class="product-action">
-                    <div class="product-action-style rounded-6px">
+                  <div className="product-action">
+                    <div className="product-action-style rounded-6px">
                       <a href="#">
-                        <i class="fa fa-plus"></i>
+                        <i className="fa fa-plus"></i>
                       </a>
                       <a href="#">
-                        <i class="fa fa-heart"></i>
+                        <i className="fa fa-heart"></i>
                       </a>
                       <a href="#">
-                        <i class="fa fa-shopping-cart"></i>
+                        <i className="fa fa-shopping-cart"></i>
                       </a>
                       <div className="center text-center">
                         <ReactStars {...starts} value={product.rating} />
@@ -195,6 +157,7 @@ export function HomeMenu({ allProducts }) {
               </div>
             </div>
           ))}
+          <a href="">See All</a>
         </div>
       </div>
       {/*-------------------  Mobile Section End ---------------  */}
@@ -202,38 +165,38 @@ export function HomeMenu({ allProducts }) {
       {/*-------------------  Watch Section Start ---------------  */}
       <div className="py-3 bg-custom text-center mt-5 w-25 mx-auto">
         <p className=" d-inline"> Watch's</p>
-        <img src="https://i.imgur.com/hpftqCo.png" className="section-header-img"/>
+        <img src="https://i.imgur.com/hpftqCo.png" className="section-header-img" />
       </div>
 
-      <div class="center mt-1 justify-content-center align-items-center">
-        <div class="container d-flex justify-content-center">
+      <div className="center mt-1 justify-content-center align-items-center">
+        <div className="container d-flex justify-content-center">
           <div className="row">
-            {allProducts.map((product) => (
-              <div key={product.id} className="col-md-4">
-                <div class="watch-card p-2">
-                  <div class="p-info px-3 py-3">
+            {allProducts.data.map((product) => (
+              <div key={product.id} className="col-lg-4 col">
+                <div className="watch-card p-2">
+                  <div className="p-info px-3 py-3">
                     <div>
-                      <h5 class="mb-0">{product.name}</h5>{" "}
+                      <h5 className="mb-0">{product.name}</h5>{" "}
                       <span>
                         <del>{product.price} $</del> <span className="badge bg-secondary">{product.discount} % Offer</span>
                       </span>
                     </div>
-                    <div class="p-price d-flex flex-row">
+                    <div className="p-price d-flex flex-row">
                       <span>$</span>
                       <h1>{product.totalPrice}</h1>
                     </div>
-                    <div class="heart">
-                      <i class="bx bx-heart"></i>
+                    <div className="heart">
+                      <i className="bx bx-heart"></i>
                     </div>
                   </div>
-                  <div class="text-center p-image">
+                  <div className="text-center p-image">
                     <img src="https://i.imgur.com/hpftqCo.png" />
                   </div>
-                  <div class="p-about">
+                  <div className="p-about">
                     <p> {product.description.slice(0, 200)}</p>
                   </div>
-                  <div class="buttons d-flex flex-row gap-3 px-3">
-                    <button class="watch-btn btn btn-danger w-100">View</button> <button class="watch-btn btn btn-outline-danger w-100">Buy Now</button>
+                  <div className="buttons d-flex flex-row gap-3 px-3">
+                    <button className="watch-btn btn btn-danger w-100">View</button> <button className="watch-btn btn btn-outline-danger w-100">Buy Now</button>
                   </div>
                 </div>
               </div>
@@ -242,14 +205,9 @@ export function HomeMenu({ allProducts }) {
         </div>
       </div>
       {/*-------------------  Watch Section End ---------------  */}
-
-
-
     </div>
   );
 }
-
-
 
 export function HomeFooter() {
   return <section className="py-5  ">Footer</section>;

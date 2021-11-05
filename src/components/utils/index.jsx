@@ -1,10 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo192.png";
-
 import { useLocation } from "react-router-dom";
 
 export function Navbar({ user }) {
+  let cyrrentUser ;
+  if(user){
+    cyrrentUser = user ?? "no user";
+    var name = cyrrentUser.name ?? "no User"
+  }
+
   const location = useLocation();
   console.log(location.pathname);
 
@@ -96,7 +101,9 @@ export function Navbar({ user }) {
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
           <div className="row w-95 mx-auto">
-            <div className="col-6">col 6 here</div>
+            <div className="col-6 text-white">
+              {name}sssssss
+              </div>
             <div className="col-6">
               <form class="container-fluid">
                 <div class="input-group">

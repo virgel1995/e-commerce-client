@@ -274,7 +274,15 @@ Navigation Media Query
 .center {
   margin: auto;
 }
+  .auto{
+    margin: 0 auto;
 
+  }
+
+  #demo{
+    margin: 0 auto;
+
+  }
 .custom-carg-bg {
   background   : #2b1f4d;
   border-radius: 7px;
@@ -317,7 +325,8 @@ Navigation Media Query
   cursor: pointer;
   border: 1px solid #fff;
   background: #fff;
-  border-radius: 2px
+  border-radius: 2px;
+  margin: 0 auto;
 }
 
 .product-wrapper,
@@ -343,7 +352,7 @@ Navigation Media Query
 }
 
 .mb-45 {
-  margin-bottom: 45px
+  margin-bottom: 45px;
 }
 
 .product-action {
@@ -360,29 +369,29 @@ Navigation Media Query
   background-color: #fff;
   box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
   display: inline-block;
-  padding: 16px 2px 12px
+  padding: 16px 2px 12px;
 }
 
 .product-action-style>a {
   color: #df8585;
   line-height: 1;
   padding: 0 21px;
-  position: relative
+  position: relative;
 }
 .product-action-style>a:hover {
   color: #4fd0ed;
   line-height: 1;
   padding: 0 21px;
-  position: relative
+  position: relative;
 }
 
 .product-action-style>a.action-plus {
-  font-size: 18px
+  font-size: 18px;
 }
 
 .product-wrapper:hover .product-action {
   bottom: 20px;
-  opacity: 1
+  opacity: 1;
 }
 .rounded-6px{
   border-radius: 6px;
@@ -396,77 +405,77 @@ Navigation Media Query
   padding: 4rem;
   background-color: rgb(46, 45, 45);
   color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @media(max-width:768px) {
   .carousel-card {
       width: 100%;
-      padding: 1.5rem
+      padding: 1.5rem;
   }
 }
 
 .row {
-  margin: 0
+  margin: 0;
 }
 
 .path {
   color: grey;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
 .path a {
-  color: #ffffff
+  color: #ffffff;
 }
 
 .info {
-  padding: 6vh 0vh
+  padding: 6vh 0vh;
 }
 
 @media(max-width:768px) {
   .info {
-      padding: 0
+      padding: 0;
   }
 }
 
 .checked {
   color: rgb(255, 217, 0);
-  margin-right: 1vh
+  margin-right: 1vh;
 }
 
 .fa-star-half-full {
-  color: rgb(255, 217, 0)
+  color: rgb(255, 217, 0);
 }
 
 .carousel-img {
   height: fit-content;
   width: 75%;
-  padding: 1rem
+  padding: 1rem;
 }
 
 @media(max-width:768px) {
   .carousel-img {
-      padding: 2.5rem 0
+      padding: 2.5rem 0;
   }
 }
 
 .title .col {
-  padding: 0
+  padding: 0;
 }
 
 .fa-heart-o {
   font-size: 2rem;
   color: #ffffffaf;
-  font-weight: lighter
+  font-weight: lighter;
 }
 
 #reviews {
   margin-left: 3vh;
-  color: grey
+  color: grey;
 }
 
 .price {
-  margin-top: 2rem
+  margin-top: 2rem;
 }
 
 label.radio span {
@@ -474,7 +483,7 @@ label.radio span {
   background-color: rgb(54, 54, 54);
   color: grey;
   display: inline-block;
-  margin-right: 2vh
+  margin-right: 2vh;
 }
 
 label.radio input:checked+span {
@@ -483,33 +492,33 @@ label.radio input:checked+span {
   background-color: rgb(54, 54, 54);
   margin-right: 2vh;
   color: #ffffff;
-  display: inline-block
+  display: inline-block;
 }
 
 .carousel-control-prev {
-  width: unset
+  width: unset;
 }
 
 .carousel-control-next {
   left: 8vh;
   right: unset;
-  width: unset
+  width: unset;
 }
 
 .lower {
   display: flex;
-  margin-top: 3rem
+  margin-top: 3rem;
 }
 
 .lower i {
   padding: 2.5vh;
   margin-right: 1vh;
   color: grey;
-  border: 1px solid rgb(85, 85, 85)
+  border: 1px solid rgb(85, 85, 85);
 }
 
 .lower .col {
-  padding: 0
+  padding: 0;
 }
 
 @media(max-width:768px) {
@@ -517,7 +526,7 @@ label.radio input:checked+span {
       padding: 2vh;
       margin-right: 1vh;
       color: grey;
-      border: 1px solid rgb(85, 85, 85)
+      border: 1px solid rgb(85, 85, 85);
   }
 }
 
@@ -527,7 +536,7 @@ label.radio input:checked+span {
   color: rgba(186, 216, 125, 0.863);
   padding: 1.8vh 4.5vh;
   height: fit-content;
-  border-radius: 3px
+  border-radius: 3px;
 }
 
 .btn:focus {
@@ -537,11 +546,11 @@ label.radio input:checked+span {
   color: white;
   -webkit-box-shadow: none;
   -webkit-user-select: none;
-  transition: none
+  transition: none;
 }
 
 .btn:hover {
-  color: white
+  color: white;
 }
 
 @media(max-width:768px) {
@@ -552,17 +561,17 @@ label.radio input:checked+span {
       padding: 1vh;
       font-size: 0.9rem;
       height: fit-content;
-      border-radius: 3px
+      border-radius: 3px;
   }
 }
 
 a {
-  color: unset
+  color: unset;
 }
 
 a:hover {
   color: unset;
-  text-decoration: none
+  text-decoration: none;
 }
 
 label.radio input {
@@ -570,11 +579,11 @@ label.radio input {
   top: 0;
   left: 0;
   visibility: hidden;
-  pointer-events: none
+  pointer-events: none;
 }
 
 label.radio {
-  cursor: pointer
+  cursor: pointer;
 }
 
 
@@ -589,39 +598,39 @@ label.radio {
   border-radius: 3px;
   cursor: pointer;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .p-info {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 .p-price {
   position: absolute;
   right: 10px;
-  top: 20px
+  top: 20px;
 }
 
 .heart i {
   font-size: 50px;
   opacity: 0;
-  color: red
+  color: red;
 }
 
 .heart i:hover {
-  color: red
+  color: red;
 }
 
 .p-image img {
   width: 240px;
   transform: rotate(15deg);
-  transition: all 0.5s
+  transition: all 0.5s;
 }
 
 .watch-card:hover .heart i {
   animation: heart 300ms ease-in forwards;
-  animation-delay: 500ms
+  animation-delay: 500ms;
 }
 
 .p-about {
@@ -630,94 +639,94 @@ label.radio {
   font-size: 10px;
   top: 140px;
   left: -125px;
-  opacity: 0
+  opacity: 0;
 }
 
 .watch-card:hover .p-about {
-  animation: content 300ms ease-in forwards
+  animation: content 300ms ease-in forwards;
 }
 
 @keyframes content {
   0% {
-      opacity: 0
+      opacity: 0;
   }
 
   100% {
       opacity: 1;
-      left: 25px
+      left: 25px;
   }
 }
 
 @keyframes heart {
   0% {
-      opacity: 0
+      opacity: 0;
   }
 
   100% {
-      opacity: 1
+      opacity: 1;
   }
 }
 
 .watch-card:hover .p-image img {
-  animation: onimage 300ms ease-in forwards
+  animation: onimage 300ms ease-in forwards;
 }
 
 .watch-card:hover .p-price {
-  animation: onprice 500ms ease-in forwards
+  animation: onprice 500ms ease-in forwards;
 }
 
 @keyframes onprice {
   0% {
       right: 10px;
-      top: 20px
+      top: 20px;
   }
 
   50% {
       right: 60px;
-      top: 30px
+      top: 30px;
   }
 
   100% {
       right: 245px;
-      top: 70px
+      top: 70px;
   }
 }
 
 @keyframes onimage {
   0% {
-      width: 250px
+      width: 250px;
   }
 
   50% {
       width: 200px;
       transform: translateY(-30px);
-      transform: translateX(100px)
+      transform: translateX(100px);
   }
 
   100% {
       width: 180px;
       top: 100px;
       transform: translateY(100px);
-      transform: translateX(110px)
+      transform: translateX(110px);
   }
 }
 
 .buttons {
   position: absolute;
-  bottom: -150px
+  bottom: -150px;
 }
 
 .watch-card:hover .buttons {
-  animation: buttons 500ms ease-in forwards
+  animation: buttons 500ms ease-in forwards;
 }
 
 @keyframes buttons {
   0% {
-      bottom: -100px
+      bottom: -100px;
   }
 
   100% {
-      bottom: 20px
+      bottom: 20px;
   }
 }
 
@@ -725,9 +734,17 @@ label.radio {
   height: 50px;
   font-size: 16px;
   width: 140px !important;
-  font-weight: 600
+  font-weight: 600;
 }
 .section-header-img{
   width: 20px;
   height: 20px;
+}
+.carso-main{
+  position: relative;
+}
+.carso-test{
+  position: absolute;
+  top: 10%;
+  right: 20%;
 }
