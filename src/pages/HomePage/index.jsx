@@ -3,40 +3,43 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import React, { useState, useEffect } from "react";
-import { HomeNavbar,HomeMenu,HomeFooter } from "../../components";
-import { getAllProducts } from "../../utils/api";
+import { Navbar, HomeMenu, HomeFooter } from "../../components";
+import { getAllProducts, getUser } from "../../utils/api";
 
 export function HomePage({ history }) {
-  const [products, setProducts] = useState({});
   const [loading, setLoading] = useState(true);
 
+  const [products, setProducts] = useState({});
+  const [user, setUser] = React.useState(null);
+
   useEffect(() => {
-    getAllProducts()
-      // .then(function (response) {
-      //   // handle success
-      //   console.log(response.data);
-      // })
-      .then(function (response) {
-        setProducts(response.data.data);
+    getUser()
+      .then(({ data }) => {
+        // user data
+        console.log("user", data);
+        setUser(data);
+        return getAllProducts();
+      })
+      .then(({ data }) => {
+        // products data
+        setProducts(data.data);
         console.log("productss", products);
         setLoading(false);
-        // return data;
       })
       .catch((e) => {
         history.push("/");
         setLoading(false);
         console.log(e);
       });
-
     // eslint-disable-next-line
   }, []);
 
   if (loading !== true) {
     // with data
     return (
-      <div>
-        <HomeNavbar />
-        <HomeMenu allProducts={products}/>
+      <div className="bg-custom">
+        <Navbar user={user}/>
+        <HomeMenu allProducts={products} />
         <HomeFooter />
       </div>
     );
