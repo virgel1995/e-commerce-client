@@ -249,14 +249,7 @@ export function HomeMenu({ allProducts }) {
   );
 }
 
-/**
-{allProducts.map((product, index) => (
-  <div key={product.id}>
-    <p> {product.name} </p>
-    <p> {product.description} </p>
-  </div>
-))}
- */
+
 
 export function HomeFooter() {
   return <section className="py-5  ">Footer</section>;
