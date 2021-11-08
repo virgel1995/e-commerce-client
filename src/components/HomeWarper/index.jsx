@@ -6,6 +6,7 @@ import Logo from "../../assets/images/logo192.png";
 import SimpleImageSlider from "react-simple-image-slider";
 
 export function HomeMenu({ allProducts }) {
+  
   console.log(allProducts.links);
   const starts = {
     size: 30,
@@ -26,6 +27,7 @@ export function HomeMenu({ allProducts }) {
   for (let i = 0; i <= allProducts.data.length; i++) {
     images.push({ url: `http://lorempixel.com/5${[i]}/500/cats/Faker` });
   }
+
   return (
     <div>
       {/* ---------------- carrousel Start ------------------- */}
@@ -35,7 +37,7 @@ export function HomeMenu({ allProducts }) {
         </div>
 
         <div className="d-block d-md-none d-lg-none">
-          <SimpleImageSlider autoPlay={true} autoPlayDelay={true} showNavs={true}  useGPURender={true} loop={true} width={504} height={504} images={images} style={{ margin: "0 auto", marginTop: "20px", width: "504px", borderRadius: "10px" }} />
+          <SimpleImageSlider autoPlay={true} autoPlayDelay={true} showNavs={true} useGPURender={true} loop={true} width={504} height={504} images={images} style={{ margin: "0 auto", marginTop: "20px", width: "504px", borderRadius: "10px" }} />
         </div>
       </div>
       {/* ---------------- carrousel End --------------------- */}
@@ -45,70 +47,34 @@ export function HomeMenu({ allProducts }) {
           <span>Hottest Giveaways</span> <span className="custom-badge text-uppercase">See More</span>
         </div>
         <div className="row">
+          {allProducts.data.map((product) => (
+            <div key={product.id} className="col-md-4">
+              <div className="card bg-transparent border">
+                <div className="d-flex bg-transparent justify-content-between align-items-center">
+                  <div className="d-flex flex-row align-items-center time">
+                    <i className="fa fa-clock-o"></i> <small className="ml-1">3 Days</small>
+                  </div>
+                  <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
+                </div>
+
+                <div className="text-center bg-transparent">
+                  <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" className="rounded-3" />
+                </div>
+
+                <div className="text-center bg-transparent">
+                  <h5>{product.name}</h5>{" "}
+                  <span className="text-success">
+                    {" "}
+                    <del>{product.price}$</del> -{product.totalPrice} ${" "}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
           <div className="col-md-4">
-            <div className="card bg-transparent border">
-              <div className="d-flex bg-transparent justify-content-between align-items-center">
-                <div className="d-flex flex-row align-items-center time">
-                  <i className="fa fa-clock-o"></i> <small className="ml-1">3 Days</small>
-                </div>
-                <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
-              </div>
-
-              <div className="text-center bg-transparent">
-                <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" className="rounded-3" />
-              </div>
-
-              <div className="text-center bg-transparent">
-                <h5>Amazon Echo</h5> <span className="text-success">$200 value</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card bg-transparent border">
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex flex-row align-items-center time">
-                  <i className="fa fa-clock-o"></i> <small className="ml-1">3 Days</small>
-                </div>
-                <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
-              </div>
-              <div className="text-center">
-                <img src="https://i.imgur.com/TbtwkyW.jpg" width="250" />
-              </div>
-              <div className="text-center">
-                <h5>Amazon Echo</h5> <span className="text-success">$200 value</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 ">
-            <div className="card bg-transparent border">
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex flex-row align-items-center time">
-                  <i className="fa fa-clock-o"></i> <small className="ml-1 text-primary">00:02:13</small>
-                </div>
-                <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
-              </div>
-              <div className="text-center">
-                <img src="https://i.imgur.com/bUWshC0.jpg" width="250" />
-              </div>
-              <div className="text-center">
-                <h5>Kruve Coffee Filters</h5> <span className="text-success">$80 value</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4 ">
-            <div className="card bg-transparent border">
-              <div className="d-flex justify-content-between align-items-center">
-                <div className="d-flex flex-row align-items-center time">
-                  <i className="fa fa-clock-o"></i> <small className="ml-1">2 Days</small>
-                </div>
-                <img src="https://i.imgur.com/suuFVrQ.png" width="20" />
-              </div>
-              <div className="text-center">
-                <img src="https://i.imgur.com/aTqSahW.jpg" width="250" />
-              </div>
-              <div className="text-center">
-                <h5>Apple watch 2.0</h5> <span className="text-success">$360 value</span>
+            <div className="card w-100 h-100  align-items-center bg-transparent border">
+              <div className="mx-auto center">
+                <Link to="/" >See All </Link> 
               </div>
             </div>
           </div>
